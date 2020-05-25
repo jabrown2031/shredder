@@ -1,0 +1,17 @@
+[package]
+name = "shredder"
+version = "0.1.0"
+authors = ["jabrown@penguin-systems.com"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.7.0"
+base64 = "0.12.1"
+
+[profile.release]
+lto = true
+panic = 'abort'
+codegen-units = 1
+opt-level = 'z'
